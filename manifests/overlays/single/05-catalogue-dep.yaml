@@ -33,7 +33,7 @@ spec:
           ports:
             - containerPort: 8080
           securityContext:
-            runAsNonRoot: true
+            #runAsNonRoot: true
             capabilities:
               drop:
                 - all
@@ -50,5 +50,5 @@ spec:
               port: 8080
             initialDelaySeconds: 180
             periodSeconds: 3
-      nodeSelector:
-        node-role.kubernetes.io/worker: ""
+      #nodeSelector:
+      #  node-role.kubernetes.io/worker: ""

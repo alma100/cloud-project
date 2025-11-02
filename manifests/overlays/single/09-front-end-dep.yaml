@@ -32,7 +32,7 @@ spec:
             - name: SESSION_REDIS
               value: "true"
           securityContext:
-            runAsNonRoot: true
+            # runAsNonRoot: true -- imagben 'myuser'-ént van definiálva, cluster nem tudja eldönteni root-e vagy nem
             capabilities:
               drop:
                 - all
@@ -56,5 +56,5 @@ spec:
         - name: tmp-volume
           emptyDir:
             medium: Memory
-      nodeSelector:
-        node-role.kubernetes.io/worker: ""
+      #nodeSelector:
+      #  node-role.kubernetes.io/worker: ""
